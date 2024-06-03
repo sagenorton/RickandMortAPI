@@ -4,7 +4,7 @@ import '../styles/global.css';
 
 // data source
 // replace temporary JSON placeholder API
-const source = 'https://jsonplaceholder.typicode.com/users';
+const source = 'https://rickandmortyapi.com/api/character';
 // fetch the data
 const res = await fetch(source); 
 // store retreived data
@@ -20,13 +20,14 @@ const data = await res.json();
 
 		<!-- Normalize CSS -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+		<link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,600,700&display=swap" rel="stylesheet"> 
 
 		<title>Retreive and and display external API data with Astro</title>
 	</head>
 	<body>
 		
 		<header class="masthead">
-			<h1 class="site-title">Gallery</h1>
+			<h1 class="site-title">A Rick and Morty Gallery</h1>
 		</header>
 
 		<main id="content" class="main-area">
@@ -35,14 +36,16 @@ const data = await res.json();
 		  
 				<!-- Your API Data -->
 				{
-					data.map( item =>
+					data.results.map( item =>
 					<li class="card-item">
 						<a href="#">
 							<figure class="card">
-							<img src="https://assets.codepen.io/16425/image-placeholder.png" alt="Placeholder">
+							<img src={item.image} alt="Character Image">
 							<figcaption class="caption">
 								<h3 class="caption-title">{item.name}</h3>
-								<p>{item.company.catchPhrase}</p>
+								<p><b>Status:</b> {item.status}</p>
+								<p><b>Species:</b> {item.species}</p>
+								<p><b>Gender:</b> {item.gender}</p>
 							</figcaption>
 							</figure>
 						</a>
