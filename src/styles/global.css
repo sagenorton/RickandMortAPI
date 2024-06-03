@@ -3,7 +3,7 @@
 /* Header */
 .masthead {
     text-align: center;
-    border-bottom: 1px solid hsl(0, 0%, 90%);
+    border-bottom: 1px solid hsl(72, 70%, 56%, 1);
 }
 
 body {
@@ -33,8 +33,9 @@ text-decoration: none;
 h1 {
 font-family: 'Clash Grotesk', sans-serif;
 font-weight: 700;
-font-size: 2.5em;
+font-size: 3em;
 color: hsla(189, 56%, 52%, 1);
+-webkit-text-stroke: 1px hsl(72, 70%, 56%, 1);
 }
 
 .caption {
@@ -105,6 +106,7 @@ a:focus .caption,
 a:hover .caption {
     background: hsla(189, 56%, 52%, 0.75);
     opacity: 1;
+    border: 5px solid hsl(72, 70%, 56%, 1);
 }
 }
 
